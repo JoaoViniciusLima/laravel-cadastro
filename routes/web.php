@@ -20,5 +20,6 @@ Route::post('/inserir', [PrestController::class, 'store']);
 Route::post('/importar', [ServicosController::class, 'store']);
 Route::get('/exibir', [PrestController::class, 'list']);
 Route::get('/csv', [ServicosController::class, 'csvpage']);
+Route::get('/buscar', [PrestController::class, 'list']);
 
 

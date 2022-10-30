@@ -54,8 +54,16 @@ class PrestController extends Controller
 
          public function list(){
            
-            
-            $prestdados = Prest::all();
+            $busca = request('busca');
+            if(isset($busca)){
+               $prestdados = Prest::where([
+                  ['nome','like','%'.$busca.'%']
+               ]
+               )->get();
+            }else{
+               $prestdados = Prest::all();
+            }
+
            
             return view('exibir',['prestdados'=>$prestdados]);
          }

@@ -21,6 +21,17 @@
         
 
      } 
+     .inputbusca{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+        height: 100%;
+        
+        
+
+     } 
      a{
         color:black;
         
@@ -43,10 +54,17 @@
             <a href="/">cadastro de prestadores</a>
         </li>
         <li >
-            <a href="/">importar csv</a>
+            <a href="/csv">importar csv</a>
         </li>
        </ul>
     </nav> 
+    <div class="inputbusca">
+        <form action="buscar" method="GET">
+            <input type="text" id="busca" name="busca" placeholder="buscar prestador">
+            <br>
+            <input type="submit" class="btn btn-primary" value="buscar">
+        </form>
+    </div>
 <div class='divmae'>
     @foreach($prestdados as $dado)
     <div class='divfilho'>
