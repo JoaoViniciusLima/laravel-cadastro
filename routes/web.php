@@ -21,5 +21,5 @@ Route::post('/importar', [ServicosController::class, 'store']);
 Route::get('/exibir', [PrestController::class, 'list']);
 Route::get('/csv', [ServicosController::class, 'csvpage']);
 Route::get('/buscar', [PrestController::class, 'list']);
-
+Route::delete('/excluir/{id}', [PrestController::class, 'destroy']);
 
