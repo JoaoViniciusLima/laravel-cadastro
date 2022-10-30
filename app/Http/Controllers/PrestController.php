@@ -72,6 +72,12 @@ class PrestController extends Controller
         
          return Prest::all();
 
-         }    
+         } 
+         public function destroy($id){
+            Prest::findOrFail($id)->delete();
+          
+            return redirect('/exibir');
+   
+            }       
         
 }

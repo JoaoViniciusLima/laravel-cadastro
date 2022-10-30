@@ -66,18 +66,18 @@
         </form>
     </div>
 <div class='divmae'>
-    @foreach($prestdados as $dado)
+    @foreach($prestdados as $prestador)
     <div class='divfilho'>
-        @if($dado->imagem !="foto não informada" )
+        @if($prestador->imagem !="foto não informada" )
         <p>foto:</p>
-     <img src="/img/fotos/{{ $dado->imagem }}" alt="foto" width= 80px;>
+     <img src="/img/fotos/{{ $prestador->imagem }}" alt="foto" width= 80px;>
      @else
      <p>foto não informada</p> 
      @endif  
-    <p>nome: {{$dado->nome}}</p>
-    <p>numero: {{$dado->telefone}}</p>
-    <p>email: {{$dado->email}}</p>
-    @foreach(json_decode($dado->servicos,TRUE) as $servico)
+    <p>nome: {{$prestador->nome}}</p>
+    <p>numero: {{$prestador->telefone}}</p>
+    <p>email: {{$prestador->email}}</p>
+    @foreach(json_decode($prestador->servicos,TRUE) as $servico)
     @if(isset($servico['nome']))
     <p>nome do serviço: {{$servico['nome']}}</p>
     @endif
@@ -89,6 +89,13 @@
     <p>valor do serviço: {{$servico['valor']}}</p>
     @endif
     @endforeach
+    <form action="/excluir/{{$prestador->id}}" method="post">
+    @csrf
+    @method('DELETE')
+    <input type="submit" class="btn btn-primary" value="excluir">
+       
+    
+    </form>
     </div>
     @endforeach
     </div>
