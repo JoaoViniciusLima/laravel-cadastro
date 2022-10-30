@@ -13,7 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Http\Controllers\PrestController;
+use App\Http\Controllers\ServicosController;
 
 Route::get('/', [PrestController::class, 'index']);
 Route::post('/inserir', [PrestController::class, 'store']);
+Route::post('/importar', [ServicosController::class, 'store']);
 Route::get('/exibir', [PrestController::class, 'list']);
+Route::get('/csv', [ServicosController::class, 'csvpage']);
+
+

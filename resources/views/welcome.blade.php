@@ -24,9 +24,7 @@
         }
        
         
-        .inputBox{
-            position: relative;
-        }
+        
         .inputUser{
             
             background: none;
@@ -49,21 +47,16 @@
             width: 80%;
             letter-spacing: 2px;
         }
-        .labelInput{
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            pointer-events: none;
-            transition: .5s;
-        }
+        
         a{
         color:black;
         
      }
      li{
-        margin-top:5px;
+        margin-top:3px;
        
-       
+     }
+
        
         
     </style>
@@ -75,7 +68,7 @@
             <a href="/exibir">prestadores cadastrados</a>
         </li>
         <li>
-            <a href="/exibir">importar csv</a>
+            <a href="/csv">importar csv</a>
         </li>
        </ul>
     </nav>
@@ -86,7 +79,7 @@
                 <br>
                 <div class="inputBox">
                 <label for="imagem" >foto:</label>
-                    <input type="file" name="imagem" id="imagem" class="inputimage" >
+                    <input type="file" name="imagem" id="imagem" class='inputimage'  >
                     
                 </div>
                 <div class="inputBox">
@@ -94,12 +87,12 @@
                     
                    
                 </div>
-                <br><br>
+                
                 <div class="inputBox">
                     
                     <p>email: <input type="text" name="email" id="email" class="inputUser" required></p>
                 </div>
-                <br><br>
+                
                 <div class="inputBox">
                     
                     <p>telefone: <input type="tel" name="telefone" id="telefone" class="inputUser" required></p>
@@ -107,7 +100,7 @@
                 <p>serviços:</p>
                 <div class="inputBox">
                     
-                    <p>nome: <input type="text" name="serviço_nome" id="serviço_nome" class="inputUser" required> ></p>
+                    <p>nome: <input type="text" name="serviço_nome" id="serviço_nome" class="inputUser" required> </p>
                     </div> 
                     <div class="inputBox">
                     
@@ -126,7 +119,7 @@
                     <p>nome: <input type="text" name="serviço_nome2" id="serviço_nome2" class="inputUser" ></p>
                     </div> 
                     <div class="inputBox">
-                    <p>descrição de serviço:</p>
+                    <p>descrição:</p>
                     <textarea  name="serviço_descricao2" id="serviço_descrição2"  rows="2" cols="50" >
                     
                     </textarea>

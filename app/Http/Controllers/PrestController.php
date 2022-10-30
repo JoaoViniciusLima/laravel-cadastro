@@ -56,9 +56,7 @@ class PrestController extends Controller
            
             
             $prestdados = Prest::all();
-            //dd($prestdados['casts']);
-            //$prestdados->servicos =   json_decode($prestdados->servicos, true); 
-            
+           
             return view('exibir',['prestdados'=>$prestdados]);
          }
          public function get_prestadores(){
