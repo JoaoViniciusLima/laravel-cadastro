@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>importar csv</title>
     <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
         .box{
             
             position: absolute;
@@ -29,12 +33,25 @@
             width: 80%;
             letter-spacing: 2px;
         }
- 
-       
+        a{
+        color:black;
+        text-decoration:none;
+        
+     }
     </style>
    
 </head>
 <body>
+<nav>
+       <ul>
+        <li >
+            <a href="/">cadastro de prestadores</a>
+        </li>
+        <li >
+            <a href="/exibir">prestadores cadastrados</a>
+        </li>
+       </ul> 
+    </nav> 
 <div class='box'>
 <form action="/importar" method="POST" enctype="multipart/form-data">
 @csrf

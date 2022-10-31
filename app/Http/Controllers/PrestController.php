@@ -9,13 +9,15 @@ class PrestController extends Controller
 {
     
     public function index() {
-    return view('welcome',);
+    return view('cadastro',);
      }
      public function store(Request $request ) {
+      //mandando os dados do formulario para o banco
         $prest = new Prest;
         $prest->nome = $request->nome;
         $prest->telefone = $request->telefone;
         $prest->email = $request->email;
+        //criando um json com os serviços
         $servicos='{}';
         $servico['nome'] = $request->serviço_nome;
         $servico['descricao'] = $request->serviço_descricao;
@@ -32,7 +34,7 @@ class PrestController extends Controller
         array_push( $servicos, $servico );
         $servicos = json_encode($servicos);
         $prest->servicos =$servicos;
-        
+        //verificando se a imagem foi informada,salvando ela em uma pasta e mandando a path para o banco
         if($request->hasFile('imagem') && $request->file('imagem')->isValid()) {
 
          $requestImage = $request->file('imagem');
@@ -53,7 +55,8 @@ class PrestController extends Controller
          }
 
          public function list(){
-           
+           //caso o usuario tenha feito uma busca procura pelo 
+           //prestador que ele tenha buscado  
             $busca = request('busca');
             if(isset($busca)){
                $prestdados = Prest::where([
@@ -63,8 +66,8 @@ class PrestController extends Controller
             }else{
                $prestdados = Prest::all();
             }
+            //mostra os prestadores cadastrados
 
-           
             return view('exibir',['prestdados'=>$prestdados]);
          }
          public function get_prestadores(){
