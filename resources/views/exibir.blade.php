@@ -34,6 +34,7 @@
      } 
      a{
         color:black;
+        text-decoration:none;
         
      }
      li{
@@ -45,6 +46,13 @@
         padding: 2px;
         width: 25%;
      }  
+     .deletebutton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+     }
     </style>
 </head>
 <body>
@@ -56,8 +64,9 @@
         <li >
             <a href="/csv">importar csv</a>
         </li>
-       </ul>
+       </ul> 
     </nav> 
+    @if($prestdados)
     <div class="inputbusca">
         <form action="buscar" method="GET">
             <input type="text" id="busca" name="busca" placeholder="buscar prestador">
@@ -89,6 +98,7 @@
     <p>valor do serviço: {{$servico['valor']}}</p>
     @endif
     @endforeach
+    <div class="deletebutton">
     <form action="/excluir/{{$prestador->id}}" method="post">
     @csrf
     @method('DELETE')
@@ -97,7 +107,10 @@
     
     </form>
     </div>
+    
+    </div>
     @endforeach
+    @endif
     </div>
 </body>
 </html>
