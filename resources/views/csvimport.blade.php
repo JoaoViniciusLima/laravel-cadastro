@@ -10,6 +10,7 @@
             font-family: Arial, Helvetica, sans-serif;
             
         }
+       
         .box{
             
             position: absolute;
@@ -21,6 +22,15 @@
             border-radius: 15px;
             width: 50%;
             
+
+            
+        }
+        .botao{
+            display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-direction:column;
         }
         .inputimage{
             
@@ -57,10 +67,17 @@
 @csrf
     <label for="imagem" >arquivo csv:</label>
                     <input type="file" name="csv" id="csv" class='inputimage' >
-        
-   
+                    
                     <br><br>
-                    <input type="submit" class="btn btn-primary" value="enviar">
+                    <div class="botao">
+                    @if(isset($pastainvalida))
+                     <p>pasta invalida</p>
+                     <br>
+                      @endif
+
+                    <input type="submit" class="btn btn-primary" value="enviar" >
+                    </div>
+                   
 </form>
 </div>
                     
