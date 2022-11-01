@@ -12,6 +12,6 @@ Execute php artisan serve
 ### É possivel consultar as informações  pelos links:
 -http://127.0.0.1:8000/api/serviços
 
--http://127.0.0.1:8000/api/get_prestadores
+-http://127.0.0.1:8000/api/prestadores
 
 
