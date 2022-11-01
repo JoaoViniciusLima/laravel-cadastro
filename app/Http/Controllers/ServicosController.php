@@ -10,6 +10,7 @@ class ServicosController extends Controller
     public function store(Request $request){
         
         //tranforma o csv em um json e manda para o banco
+        //caso a pasta seja invalida ira mostrar a mensagem pasta invalida na pasta
         try{
         $servicos = new Servicos;
         $csvfile = $request->csv;
@@ -35,4 +36,10 @@ class ServicosController extends Controller
        
         return view('csvimport');
      }   
+     public function get_servicos(){
+            
+        
+      return Servicos::all();
+
+      } 
 }

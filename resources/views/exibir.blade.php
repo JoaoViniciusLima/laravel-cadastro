@@ -66,7 +66,7 @@
         </li>
        </ul> 
     </nav> 
-    @if($prestdados)
+    
     <div class="inputbusca">
         <form action="buscar" method="GET">
             <input type="text" id="busca" name="busca" placeholder="buscar prestador">
@@ -110,7 +110,7 @@
     
     </div>
     @endforeach
-    @endif
+    
     </div>
 </body>
 </html>
